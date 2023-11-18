@@ -16,6 +16,6 @@ namespace Traslado_Seguro.Models
 		[Column(TypeName = "decimal (6,2)")]
 		public int Costo { get; set; }
 
-		public ICollection<Cliente> Clientes { get; set; }
+		public ICollection<Cliente>? Clientes { get; set; } = default!;
 	}
 }
