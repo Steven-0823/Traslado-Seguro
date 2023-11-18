@@ -1,0 +1,75 @@
+﻿@page
+@model Traslado_Seguro.Pages.Servicio_Transporte.IndexModel
+@{
+	ViewData["Title"] = "Index Servicio de Trasnporte";
+}
+<h1>Servicio de Trasnporte</h1>
+
+<p>
+	<a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].Conductor)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].Fecha)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].Origen)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].Destino)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].Descripcion)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].Costo)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model=>model.ServicioTransportes[0].ClienteId)
+			</th>
+			<th>Actions</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ServicioTransportes)
+		{
+							<tr>
+										<td>
+					@Html.DisplayFor(modelItem=> item.Conductor)
+								</td>
+								<td>
+					@Html.DisplayFor(modelItem=> item.Fecha)
+								</td>
+									<td>
+					@Html.DisplayFor(modelItem=> item.Origen)
+								</td>
+								<td>
+					@Html.DisplayFor(modelItem=> item.Destino)
+								</td>
+									<td>
+					@Html.DisplayFor(modelItem=> item.Descripcion)
+									</td>
+										<td>
+					@Html.DisplayFor(modelItem=> item.Costo)
+										</td>
+											<td>
+					@Html.DisplayFor(modelItem=> item.ClienteId)
+											</td>
+								 @* <td>
+										 <a asp-page ="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>  
+									<a asp-page ="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a> 
+								</td> *@ 
+								<td>
+									<span></span>
+								</td>
+							</tr>
+		}
+	</tbody>
+</table>

@@ -5,8 +5,8 @@ namespace Traslado_Seguro.Models
 	public class ServicioTransporte
 	{
 		public string id { get; set; }
-		public string conductor { get; set; }
-		public string fecha { get; set; }
+		public string Conductor { get; set; }
+		public string Fecha { get; set; }
 		public string Origen { get; set; }
 
 		public string Destino { get; set; }
