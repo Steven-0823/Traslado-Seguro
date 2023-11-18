@@ -1,0 +1,45 @@
+﻿@page
+@model Traslado_Seguro.Pages.Clientes.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Cliente.Id" />
+        <div class="form-group">
+            <Label asp-for="Cliente.Name" class="control-label"></label>
+            <input asp-for="Cliente.Name" class="form-control" />
+            <span asp-validation-for="Cliente.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+        <label asp-for="Cliente.Telefono" class="control-label"></label> 
+        <input asp-for="Cliente. Telefono" class="form-control" />
+        <span asp-validation-for="Cliente.Telefono" class="text-danger"></span> 
+        </div>
+        <div class="form-group">
+        <label asp-for="Cliente.Direccion" class="control-label"></label> 
+        <input asp-for="Cliente. Direccion" class="form-control" />
+        <span asp-validation-for="Cliente.Direccion" class="text-danger"></span> 
+        </div>
+        <div class="form-group">
+        <label asp-for="Cliente.ServicioTran" class="control-label"></label> 
+        <input asp-for="Cliente. ServicioTran" class="form-control" />
+        <span asp-validation-for="Cliente.ServicioTran" class="text-danger"></span> 
+        </div
+        <div class="form-group">
+          <input type="submit" value="Save" class="btn btn-success" />
+          <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+        </div>
+    </form> 
+</div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
