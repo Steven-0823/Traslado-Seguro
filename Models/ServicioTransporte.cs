@@ -2,11 +2,10 @@
 
 namespace Traslado_Seguro.Models
 {
-	public class SevicioTransporte
+	public class ServicioTransporte
 	{
 		public string id { get; set; }
 		public string conductor { get; set; }
-		public string Cliente { get; set; }
 		public string fecha { get; set; }
 		public string Origen { get; set; }
 
@@ -15,7 +14,8 @@ namespace Traslado_Seguro.Models
 
 		[Column(TypeName = "decimal (6,2)")]
 		public int Costo { get; set; }
+		public int ClienteId { get; set; }
+		public Cliente Cliente { get; set; }
 
-		public ICollection<Cliente>? Clientes { get; set; } = default!;
 	}
 }

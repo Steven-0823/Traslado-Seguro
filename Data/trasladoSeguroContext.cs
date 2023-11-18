@@ -9,6 +9,6 @@ namespace Traslado_Seguro.Data
 		{
 		}
 		public DbSet<Cliente> Clientes { get; set; }
-		public DbSet<SevicioTransporte> SevicioTransportes { get; set; }
+		public DbSet<ServicioTransporte> SevicioTransportes { get; set; }
 	}
 }

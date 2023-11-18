@@ -8,13 +8,11 @@ namespace Traslado_Seguro.Pages.Clientes
 {
     public class IndexModel : PageModel
     {
-		private readonly trasladoSeguroContext _context;
-
+        private readonly trasladoSeguroContext _context;
 		public IndexModel(trasladoSeguroContext context)
 		{
 			_context = context;
 		}
-
 		public IList<Cliente> Clientes { get; set; } = default!;
 		public async Task OnGetAsync()
 		{

@@ -1,13 +1,13 @@
 ﻿@page
 @model Traslado_Seguro.Pages.Clientes.IndexModel
 @{
-	ViewData["Title"] = "Index Cliente";
+	ViewData["Title"] = "Index Product";
 }
 <h1>Clientes</h1>
 
- <p>
+<p>
 	<a asp-page="Create" class="btn btn-success">Create New</a>
-</p> 
+</p>
 
 <table class="table">
 	<thead>
@@ -20,13 +20,9 @@
 			</th>
 			<th>
 				@Html.DisplayNameFor(model=>model.Clientes[0].Direccion)
-
 			</th>
 			<th>
 				@Html.DisplayNameFor(model=>model.Clientes[0].ServicioTran)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model=>model.Clientes[0].ServicioTranId)
 			</th>
 
 		</tr>
@@ -34,31 +30,27 @@
 	<tbody>
 		@foreach (var item in Model.Clientes)
 		{
-					<tr>
-						<td>
+						<tr>
+									<td>
 					@Html.DisplayFor(modelItem=> item.Name)
-						</td>
-						<td>
-					@Html.DisplayFor(modelItem=> item.Telefono)
-						</td>
+							</td>
 							<td>
-					@Html.DisplayFor(modelItem=> item.Direccion)
-
+					@Html.DisplayFor(modelItem=> item.Telefono)
 							</td>
 								<td>
+					@Html.DisplayFor(modelItem=> item.Direccion)
+							</td>
+							<td>
 					@Html.DisplayFor(modelItem=> item.ServicioTran)
 							</td>
-								<td>
-					@Html.DisplayFor(modelItem=> item.ServicioTranId)
+							 <td>
+									<a asp-page ="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
+								<a asp-page ="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a> 
+							</td> 
+							<td>
+								<span></span>
 							</td>
-						@* <td>
-								<a asp-page ="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-							<a asp-page ="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-						</td> *@
-						<td>
-							<span></span>
-						</td>
-					</tr>
+						</tr>
 		}
 	</tbody>
 </table>

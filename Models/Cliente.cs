@@ -8,7 +8,6 @@
 		public string Direccion { get; set; }
 		public string ServicioTran { get; set; }
 
-		public int ServicioTranId { get; set; }
-		public SevicioTransporte SevicioTransporte { get; set; }
+		public ICollection<ServicioTransporte> ServicioTransportes { get; set; }
 	}
 }
