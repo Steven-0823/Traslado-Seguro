@@ -8,6 +8,6 @@
 		public string Direccion { get; set; }
 		public string ServicioTran { get; set; }
 
-		public ICollection<ServicioTransporte> ServicioTransportes { get; set; }
+		public ICollection<ServicioTransporte>? ServicioTransportes { get; set; } = default!;
 	}
 }
