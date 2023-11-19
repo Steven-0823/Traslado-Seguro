@@ -13,9 +13,9 @@ namespace Traslado_Seguro.Models
 		public string? Descripcion { get; set; }
 
 		[Column(TypeName = "decimal (6,2)")]
-		public int Costo { get; set; }
+		public decimal Costo { get; set; }
 		public int ClienteId { get; set; }
-		public Cliente Cliente { get; set; }
+		public Cliente Cliente { get; set; } = default!;
 
 	}
 }
