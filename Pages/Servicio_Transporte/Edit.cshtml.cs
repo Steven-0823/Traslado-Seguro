@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Traslado_Seguro.Data;
 using Traslado_Seguro.Models;
 
-namespace Traslado_Seguro.Pages.Clientes
+namespace Traslado_Seguro.Pages.Servicio_Transporte
 {
     public class EditModel : PageModel
     {
@@ -14,19 +14,19 @@ namespace Traslado_Seguro.Pages.Clientes
 			_context = context;
 		}
 		[BindProperty]
-		public Cliente Cliente { get; set; } = default!;
+		public ServicioTransporte ServicioTransporte { get; set; } = default!;
 		public async Task<IActionResult> OnGetAsync(int? id)
 		{
-			if (id == null || _context.Clientes == null)
+			if (id == null || _context.SevicioTransportes == null)
 			{
 				return NotFound();
 			}
-			var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
-			if (cliente == null)
+			var servicotrasporte = await _context.SevicioTransportes.FirstOrDefaultAsync(m => m.id == id);
+			if (servicotrasporte == null)
 			{
 				return NotFound();
 			}
-			Cliente = cliente;
+			ServicioTransporte = servicotrasporte;
 			return Page();
 
 		}
@@ -36,7 +36,7 @@ namespace Traslado_Seguro.Pages.Clientes
 			{
 				return Page();
 			}
-			_context.Attach(Cliente).State = EntityState.Modified;
+			_context.Attach(ServicioTransporte).State = EntityState.Modified;
 
 			try
 			{
@@ -44,7 +44,7 @@ namespace Traslado_Seguro.Pages.Clientes
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				if (!ClienteExists(Cliente.Id))
+				if (!ServicioTransporteExists(ServicioTransporte.id))
 				{
 					return NotFound();
 				}
@@ -56,9 +56,9 @@ namespace Traslado_Seguro.Pages.Clientes
 			}
 			return RedirectToPage("./Index");
 		}
-		private bool ClienteExists(int id)
+		private bool ServicioTransporteExists(int id)
 		{
-			return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
+			return (_context.SevicioTransportes?.Any(e => e.id == id)).GetValueOrDefault();
 		}
 	}
 }

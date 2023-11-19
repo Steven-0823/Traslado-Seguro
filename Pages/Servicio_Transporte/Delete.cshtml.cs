@@ -23,7 +23,7 @@ namespace Traslado_Seguro.Pages.Servicio_Transporte
 				return NotFound();
 
 			}
-			var sevicioTransporte = await _context.SevicioTransportes.FirstOrDefaultAsync(m => m.Id == id);
+			var sevicioTransporte = await _context.SevicioTransportes.FirstOrDefaultAsync(m => m.id == id);
 
 			if (sevicioTransporte == null)
 			{
